@@ -1,0 +1,13 @@
+# ignore compiled bytecode
+*.pyc
+__pycache__/
+
+# virtualenv
+lib64
+bin/*
+include/*
+lib/*
+
+dist/
+build/
+*.egg-info/
