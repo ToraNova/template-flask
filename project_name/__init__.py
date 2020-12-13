@@ -11,6 +11,8 @@ flask run --no-reload (no reloading)
 import secrets
 from flask import Flask, render_template, redirect, url_for
 
+from project_name import extra, bpex
+
 import datetime
 
 def create_app(test_config=None):
@@ -33,5 +35,8 @@ def create_app(test_config=None):
     def hello():
         d = datetime.datetime.now()
         return render_template('hello.html', data = d)
+
+    extra.init_app(app) # initialize routes not defined here
+    app.register_blueprint(bpex.bp)
 
     return app
