@@ -1,0 +1,16 @@
+<VirtualHost *:443>
+	ServerName ting.toranet.mtti
+	ServerAlias ting.toranet.mtti
+
+	# ssl
+	SSLCertificateFile /etc/ssl/certs/ting.toranet.mtti.nucca.crt
+	SSLCertificateKeyFile /etc/ssl/private/ting.toranet.mtti.nucca.key
+
+	# for flask app, use a middleware and to prefix /fengshui to all its routes
+	<Location /litview>
+		ProxyPass http://127.0.0.1:4000/litview
+		ProxyPassReverse http://127.0.0.1:4000/litview
+		Require all granted
+	</Location>
+
+</VirtualHost>
