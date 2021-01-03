@@ -28,9 +28,13 @@ def create_app(test_config=None):
         # to use a test_config, do create_app({"TESTING":True}), test_config is a dict
         app.config.from_mapping(test_config)
 
+    @app.route('/redir')
+    def redir():
+        return redirect(url_for('hello'))
+
     @app.route('/')
     def root():
-        return redirect(url_for('hello'))
+        return 'go to hello?'
 
     # a simple page that says hello
     @app.route('/hello')
