@@ -2,8 +2,11 @@
 
 {% block title %}{% endblock %}
 {% block header %}
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css' ) }}">
 <style>
-h1 { color:blue; }
+p {
+	text-align:center;
+}
 </style>
 {% endblock %}
 

@@ -42,6 +42,11 @@ def create_app(test_config=None):
         d = datetime.datetime.now()
         return render_template('hello.html', data = d)
 
+    @app.route('/eyecandy')
+    def eyecandy():
+        d = datetime.datetime.now()
+        return render_template('eyecandy.html', data = d)
+
     extra.init_app(app) # initialize routes not defined here
     app.register_blueprint(bpex.bp)
 
