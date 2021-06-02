@@ -17,3 +17,5 @@ Environment="PATH=/home/cjason/staging/project_name/bin"
 # unix sockets (used together with nginx, see nginx_loc.conf)
 #ExecStart=/home/cjason/staging/project_name/bin/gunicorn -w 4 -b unix:/tmp/project_name.sock "project_name:create_app()"
 ExecStart=/home/cjason/staging/project_name/bin/gunicorn -w 4 -b 0.0.0.0:4000 "project_name:create_app()"
+# if using eventlet (for socketio)
+#ExecStart=/home/cjason/staging/project_name/bin/gunicorn --worker-class eventlet -w 4 -b 0.0.0.0:4000 "project_name:create_app()"
